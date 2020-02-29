@@ -1479,6 +1479,14 @@ screen.fill([255,255,255])
 screen.blit(bigfont.render('Thank you for your participation!', 0 ,(0,0,0), (255,255,255)), [300,300])
 screen.blit(bigfont.render('Please let the experimenter know that you are done.', 0, (0,0,0), (255,255,255)), [300, 500])
 pygame.display.flip()
+
+# close all the files
+ordertimeFile.close()
+surveyData.close()
+surveyData2.close()
+timeEstFile.close()
+numEstFile.close()
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
