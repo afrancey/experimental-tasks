@@ -5,7 +5,7 @@ import random
 import os
 import Questions
 
-study_questions = Questions()
+study_questions = Questions.Questions()
 
 doBeginning = True
 doTrials = True
@@ -424,6 +424,7 @@ def readOrderTime(section):
 
     lines = ordertimeFile.readlines()
 
+    ordertimeFile.close()
 
     linesArray = []
     for line in lines[1:]:
@@ -857,6 +858,8 @@ if doTrials:
 
        pygame.display.flip()
 
+    timeEstFile.close()
+
 
 
     
@@ -1050,6 +1053,8 @@ if doNumerical == True:
 
 
        pygame.display.flip()
+
+    numEstFile.close()
 
 
 
@@ -1480,12 +1485,9 @@ screen.blit(bigfont.render('Thank you for your participation!', 0 ,(0,0,0), (255
 screen.blit(bigfont.render('Please let the experimenter know that you are done.', 0, (0,0,0), (255,255,255)), [300, 500])
 pygame.display.flip()
 
-# close all the files
-ordertimeFile.close()
+# close data files
 surveyData.close()
 surveyData2.close()
-timeEstFile.close()
-numEstFile.close()
 
 while True:
     for event in pygame.event.get():
